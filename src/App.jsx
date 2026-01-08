@@ -13,9 +13,16 @@ function App() {
     { name: 'Pasta', price: 0.7 },
   ];
 
-  function addToCart(product){
-    setAddedProducts([...addedProducts, product])
-    console.log(addedProducts)
+
+  function addToCart(product) {
+    if(!addedProducts.some((p) => {
+      return p.name === product.name
+    })){
+      product.quantity = 1;
+      setAddedProducts(curr => [...curr, product])
+    }else{
+      return
+    } 
   }
 
   return (
