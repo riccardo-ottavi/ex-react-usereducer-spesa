@@ -31,6 +31,7 @@ function App() {
       <ProductsList
         addToCart={addToCart}
         products={products}
+        addedProducts={addedProducts}
       />
     </>
   )
