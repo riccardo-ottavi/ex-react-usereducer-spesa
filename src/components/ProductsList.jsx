@@ -1,7 +1,14 @@
-export default function ProductsList(){
+export default function ProductsList({ products }){
+
+
     return(
         <div className="container">
-            <h2>Lista Prodotti</h2>
+            {products?.map( p => (
+                <div className="card">
+                    <p>{p.name}</p>
+                    <p>{p.price}€</p>
+                </div>
+            ))}
         </div>
     )
 }

@@ -13,7 +13,9 @@ function App() {
   return (
     <>
       <h1>Prova</h1>
-      <ProductsList/>
+      <ProductsList
+        products={products}
+      />
     </>
   )
 }
