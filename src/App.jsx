@@ -15,14 +15,26 @@ function App() {
 
 
   function addToCart(product) {
-    if(!addedProducts.some((p) => {
+    if (!addedProducts.some((p) => {
       return p.name === product.name
-    })){
-      product.quantity = 1;
-      setAddedProducts(curr => [...curr, product])
-    }else{
-      return
-    } 
+    })) {
+      setAddedProducts(curr => [
+        ...curr,
+        { ...product, quantity: 1 }
+      ])
+    } else {
+      updateProductQuantity(product)
+    }
+  }
+
+  function updateProductQuantity(product) {
+    setAddedProducts(curr =>
+      curr.map(p =>
+        p.name === product.name
+          ? { ...p, quantity: p.quantity + 1 }
+          : p
+      )
+    )
   }
 
   return (

@@ -15,7 +15,7 @@ export default function ProductsList({ products, addToCart, addedProducts }) {
                 <ul>
                     {addedProducts.map(p => (
                         <div className="card">
-                            <li>{p.name} {p.price}</li>
+                            <li>{p.name} {p.price} {p.quantity}</li>
                         </div>
                     ))}
                 </ul>
