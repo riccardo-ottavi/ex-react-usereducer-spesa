@@ -1,4 +1,4 @@
-export default function ProductsList({ products }){
+export default function ProductsList({ products, addToCart }){
 
 
     return(
@@ -7,6 +7,7 @@ export default function ProductsList({ products }){
                 <div className="card">
                     <p>{p.name}</p>
                     <p>{p.price}€</p>
+                    <button onClick={() => {addToCart(p)}}>Aggiungi al Carrello</button>
                 </div>
             ))}
         </div>

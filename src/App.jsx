@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import './App.css'
 import ProductsList from './components/ProductsList';
 
 function App() {
+
+  const [addedProducts, setAddedProducts] = useState([])
 
   const products = [
     { name: 'Mela', price: 0.5 },
@@ -10,10 +13,16 @@ function App() {
     { name: 'Pasta', price: 0.7 },
   ];
 
+  function addToCart(product){
+    setAddedProducts([...addedProducts, product])
+    console.log(addedProducts)
+  }
+
   return (
     <>
       <h1>Prova</h1>
       <ProductsList
+        addToCart={addToCart}
         products={products}
       />
     </>
