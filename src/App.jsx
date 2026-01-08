@@ -27,6 +27,11 @@ function App() {
     }
   }
 
+  function removeToCart(product){
+    const filteredProducts = addedProducts.filter( p => p.name !== product.name);
+    setAddedProducts(filteredProducts)
+  }
+
   function updateProductQuantity(product) {
     setAddedProducts(curr =>
       curr.map(p =>
@@ -44,6 +49,7 @@ function App() {
         addToCart={addToCart}
         products={products}
         addedProducts={addedProducts}
+        removeToCart={removeToCart}
       />
     </>
   )

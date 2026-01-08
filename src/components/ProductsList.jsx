@@ -1,4 +1,4 @@
-export default function ProductsList({ products, addToCart, addedProducts }) {
+export default function ProductsList({ products, addToCart, addedProducts, removeToCart }) {
 
 
     return (
@@ -16,6 +16,7 @@ export default function ProductsList({ products, addToCart, addedProducts }) {
                     {addedProducts.map(p => (
                         <div className="card">
                             <li>{p.name} {p.price} {p.quantity}</li>
+                            <button onClick={() => { removeToCart(p) }}>Rimuovi dal Carrello</button>
                         </div>
                     ))}
                 </ul>
