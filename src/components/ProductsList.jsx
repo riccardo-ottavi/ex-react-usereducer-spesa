@@ -1,4 +1,4 @@
-export default function ProductsList({ products, addToCart, addedProducts, removeToCart }) {
+export default function ProductsList({ products, addToCart, addedProducts, removeToCart, calculateTotal }) {
 
 
     return (
@@ -20,6 +20,9 @@ export default function ProductsList({ products, addToCart, addedProducts, remov
                         </div>
                     ))}
                 </ul>
+            </div>
+            <div className="checkout">
+                <p>{calculateTotal(addedProducts)}</p>
             </div>
         </div>
     )

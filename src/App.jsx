@@ -32,6 +32,13 @@ function App() {
     setAddedProducts(filteredProducts)
   }
 
+  function calculateTotal(cartProducts) {
+  return cartProducts.reduce(
+    (sum, product) => sum + product.price * product.quantity,
+    0
+  );
+}
+
   function updateProductQuantity(product) {
     setAddedProducts(curr =>
       curr.map(p =>
@@ -50,6 +57,7 @@ function App() {
         products={products}
         addedProducts={addedProducts}
         removeToCart={removeToCart}
+        calculateTotal={calculateTotal}
       />
     </>
   )
